@@ -1,0 +1,12 @@
+{% extends 'todo/base.html' %}
+
+{% block content%}
+
+<h1>To Do Update</h1>
+<form action="" method='POST'>
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value ='Güncelleyiniz'>
+</form>
+
+{% endblock content%}
