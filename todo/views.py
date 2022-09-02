@@ -59,6 +59,10 @@ def todo_update(request,id):
 def todo_delete(request,id):
     todo = Todo.objects.get(id=id)
 
+    if request.method == 'POST':
+        todo.delete()
+        return redirect('home')
+
     context = {
         'todo' : todo
     }
